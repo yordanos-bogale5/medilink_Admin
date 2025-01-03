@@ -1,0 +1,55 @@
+
+.page-title {
+  text-align: flex-start;
+  font-size: 2rem;
+  color: #3c8dbc;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  th {
+    background-color: #4caf50;
+    color: white;
+    border-bottom: 2px solid #f1f1f1;
+  }
+
+  td {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  tr:hover td {
+    background-color: #e3f2e1;
+    cursor: pointer;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f3f3f3;
+  }
+
+  tr:nth-child(odd) td {
+    background-color: #ffffff;
+  }
+
+  input.form-control {
+    max-width: 450px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Optional: For extra small screens, input can take up full width */
+  @media (max-width: 575px) {
+    .form-control {
+      width: 100% !important;
+    }
+  }

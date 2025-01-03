@@ -1,0 +1,58 @@
+<div class="container mt-2">
+  <div class="row">
+    <!-- Flexbox container for displaying blogs in a responsive grid -->
+    <div class="col-12">
+      <div class="blogs-container d-flex flex-wrap justify-content-between">
+        <!-- Loop through each blog post -->
+        <div *ngFor="let blog of blogs" class="blog-card-container col-lg-12 col-md-6 col-sm-12 mb-4">
+          <div class="card shadow-lg blog-card">
+            <div class="card-header text-white rounded-top">
+              <h5>{{ blog.title }}</h5>
+              <small class="text-light">{{ blog.date | date: 'medium' }}</small>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{ blog.content }}</p>
+              <!-- Edit Blog Button -->
+              <button class="btn btn-warning btn-sm me-2" (click)="editBlog(blog.id)">
+                <i class="bi bi-pencil"></i> Edit
+              </button>
+              <!-- Delete Blog Button -->
+              <button class="btn btn-danger btn-sm float-end" (click)="deleteBlog(blog.id)">
+                <i class="bi bi-trash"></i> Delete
+              </button>
+              <hr class="my-4">
+              
+              <!-- Comments Section -->
+              <h5 class="mb-3">Comments:</h5>
+              <ul class="list-group">
+                <li *ngFor="let comment of blog.comments" class="list-group-item list-group-item-light mb-2 rounded">
+                  <p>{{ comment.text }}</p>
+                  <button class="btn btn-danger btn-sm" (click)="deleteComment(comment.id)">
+                    <i class="bi bi-x-circle"></i> Delete Comment
+                  </button>
+                </li>
+              </ul>
+
+              <!-- Add New Comment Form -->
+              <div class="mt-3">
+                <input type="text" [(ngModel)]="newCommentText" class="form-control" placeholder="Add a new comment..." />
+                <button class="btn btn-primary mt-2" (click)="addComment(blog.id)">
+                  <i class="bi bi-send"></i> Add Comment
+                </button>
+              </div>
+
+              <hr class="my-4">
+
+              <!-- Like/Unlike Feature -->
+              <h5 class="d-inline">Likes: {{ blog.likes }}</h5>
+              <button class="btn btn-outline-success btn-sm ms-3" (click)="toggleLike(blog)">
+                <i class="bi" [ngClass]="{ 'bi-heart-fill': blog.liked, 'bi-heart': !blog.liked }"></i> 
+                {{ blog.liked ? 'Unlike' : 'Like' }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

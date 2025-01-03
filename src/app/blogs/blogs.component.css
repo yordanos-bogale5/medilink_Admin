@@ -1,0 +1,279 @@
+/* Container Styling */
+.blogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 0s forwards; /* Fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Blog card container styling */
+.blog-card-container {
+  flex: 1 1 calc(33.333% - 20px);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: slideUp 0.5s forwards; /* Slide-up effect */
+}
+
+@media (max-width: 992px) {
+  .blog-card-container {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-card-container {
+    flex: 1 1 100%;
+  }
+}
+
+/* Slide-up animation for blog cards */
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Card Styling with minimal, flat design */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+/* Card header with a fresh blue background */
+.card-header {
+  background-color: #064797;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-weight: 550;
+}
+
+.text-light {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.card-text, p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.98em;
+  font-weight: 500;
+  color: #686767;
+}
+
+/* Bounce animation for blog title */
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Card content (title and description) */
+.card-body {
+  padding: 15px;
+  line-height: 1.7;
+  color: #555;
+  opacity: 0;
+  animation: fadeIn 0s 0s forwards; /* Fade-in effect for content */
+}
+
+/* Buttons styling */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 10px;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 8px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full-width for smaller screens */
+}
+
+/* Responsive button adjustments */
+@media (min-width: 576px) {
+  button {
+    width: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Hover effects on buttons */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* More specific button types for actions */
+.btn-warning {
+  background-color: #f39c12;
+}
+
+.btn-warning:hover {
+  background-color: #e67e22;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Subtle hover effect for like button */
+.btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+  background: transparent;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-outline-success:focus {
+  outline: none;
+}
+
+/* Comment styling */
+.list-group-item {
+  background-color: #f9f9f9;
+  border: none;
+  padding: 5px;
+  margin: 8px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for comments */
+.list-group-item:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Avatar image for comment authors */
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+/* Comment text */
+.comment-text {
+  font-size: 0.8rem;
+  color: #555;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Modal dialog styling for delete confirmation */
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: #fff;
+  border-bottom: 2px solid #ddd;
+}
+
+.modal-body {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #ddd;
+  padding: 10px;
+}
+
+.modal-footer button {
+  font-size: 1rem;
+  padding: 12px 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Subtle animation for background changes */
+@keyframes backgroundChange {
+  0% { background: linear-gradient(45deg, #f7f7f7, #f0f4f7); }
+  100% { background: linear-gradient(45deg, #ffffff, #dcdfe6); }
+}
+
+body:hover {
+  animation: backgroundChange 0.5s forwards;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 576px) {
+  .blogs-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-card-container {
+    flex: 1 1 100%;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

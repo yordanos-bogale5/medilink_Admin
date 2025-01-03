@@ -1,0 +1,70 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+<div class="container py-4">
+  <h2 class="text-center mb-4">Hospital Dashboard</h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <!-- Patients Card -->
+    <div class="col">
+      <div class="card shadow-sm border-primary">
+        <div class="card-body text-center">
+          <i class="bi bi-person-fill display-4 text-primary mb-3"></i>
+          <h3 class="card-title">Patients</h3>
+          <p class="card-text fs-1 fw-bold">500</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Doctors Card -->
+    <div class="col">
+      <div class="card shadow-sm border-success">
+        <div class="card-body text-center">
+          <i class="bi bi-person-lines-fill display-4 text-success mb-3"></i>
+          <h3 class="card-title">Doctors</h3>
+          <p class="card-text fs-1 fw-bold">30</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Appointments Card -->
+    <div class="col">
+      <div class="card shadow-sm border-warning">
+        <div class="card-body text-center">
+          <i class="bi bi-calendar-event-fill display-4 text-warning mb-3"></i>
+          <h3 class="card-title">Appointments</h3>
+          <p class="card-text fs-1 fw-bold">120</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Revenue Card -->
+    <div class="col">
+      <div class="card shadow-sm border-danger">
+        <div class="card-body text-center">
+          <i class="bi bi-currency-dollar display-4 text-danger mb-3"></i>
+          <h3 class="card-title">Revenue</h3>
+          <p class="card-text fs-1 fw-bold">$12,500</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <h4>Recent Activities</h4>
+        </div>
+        <div class="card-body">
+          <ul *ngFor="let recent of recent_activities">
+            <li class="list-group-item">{{ recent.recent1 }}</li>
+            <li class="list-group-item">{{ recent.recent2 }}</li>
+            <li class="list-group-item">{{ recent.recent3 }}</li>
+            <li class="list-group-item">{{ recent.recent4 }}</li>
+            <li class="list-group-item">{{ recent.recent5 }}</li>
+            <li class="list-group-item">{{ recent.recent6 }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

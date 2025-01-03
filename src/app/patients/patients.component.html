@@ -1,0 +1,35 @@
+<div class="patients mt-4">
+  <h2 class="page-title text-center mb-4">Patients</h2>
+
+  <!-- Search bar for filtering patients -->
+  <div class="mb-4 d-flex justify-content-center">
+    <input
+      type="text"
+      class="form-control w-75 w-md-50 w-lg-25"
+      [(ngModel)]="searchQuery"
+      placeholder="Search by name or gender"
+    />
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Display filtered patients -->
+        <tr *ngFor="let patient of getFilteredPatients()">
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.gender }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

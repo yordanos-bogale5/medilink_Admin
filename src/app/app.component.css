@@ -1,0 +1,54 @@
+
+
+/* Sidebar */
+.app-sidebar {
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #2c3e50;
+}
+
+.app-sidebar .vertical-nav-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.app-sidebar .vertical-nav-menu li {
+  padding: 10px 20px;
+}
+
+.app-sidebar .vertical-nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.app-sidebar .vertical-nav-menu li a:hover {
+  background-color: #34495e;
+}
+
+.app-sidebar .vertical-nav-menu li a.mm-active {
+  background-color: #1abc9c;
+}
+
+/* Content */
+.app-main {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/* Header and other content styles */
+.widget-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f0f2f5;
+}
+
+.widget-content-wrapper h2 {
+  font-size: 24px;
+  color: #333;
+}

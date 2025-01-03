@@ -1,0 +1,35 @@
+<div class="doctors mt-4">
+  <h2 class="page-title text-center mb-4">Doctors</h2>
+
+  <!-- Search bar for filtering doctors, with Bootstrap responsive utilities -->
+  <div class="mb-4 d-flex justify-content-center">
+    <input
+      type="text"
+      class="form-control w-75 w-md-50 w-lg-25"
+      [(ngModel)]="searchQuery"
+      placeholder="Search by name, specialization, or contact"
+    />
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Specialization</th>
+          <th scope="col">Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filtered doctors list -->
+        <tr *ngFor="let doctor of getFilteredDoctors()">
+          <td>{{ doctor.id }}</td>
+          <td>{{ doctor.name }}</td>
+          <td>{{ doctor.specialization }}</td>
+          <td>{{ doctor.contact }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

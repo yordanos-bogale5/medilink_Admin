@@ -1,0 +1,71 @@
+/* Table Styles */
+.container{
+  color: gray;
+}
+
+.table {
+  border-collapse: collapse;
+ 
+}
+
+th, td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Badge Styles */
+.badge {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .table th, .table td {
+    font-size: 12px;
+  }
+
+  /* Input fields and buttons will span full width on smaller screens */
+  input[type="text"], button {
+    width: 100%;
+  }
+}
+
+/* Additional Styling */
+h2 {
+  color: #007bff;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.alert {
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+}

@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Appointment Management</h2>
+
+  <div class="row mb-3">
+    <div class="col-md-6 offset-md-3">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchQuery"
+        placeholder="Search by Patient Name or Doctor"
+      />
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Appointment ID</th>
+          <th>Patient Name</th>
+          <th>Doctor Name</th>
+          <th>Appointment Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through filtered appointments -->
+        <tr *ngFor="let appointment of getFilteredAppointments()">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.patientName }}</td>
+          <td>{{ appointment.doctorName }}</td>
+          <td>{{ appointment.appointmentDate }}</td>
+          <td>
+            <span [ngClass]="{
+              'badge badge-success': appointment.status === 'Confirmed',
+              'badge badge-warning': appointment.status === 'Pending',
+              'badge badge-danger': appointment.status === 'Cancelled'
+            }">
+              {{ appointment.status }}
+            </span>
+          </td>
+          <td>
+            <div class="btn-group" role="group">
+              <button class="btn btn-warning btn-sm" (click)="updateStatus(appointment)">Update Status</button>
+              <button class="btn btn-danger btn-sm" (click)="cancelAppointment(appointment)">Cancel</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

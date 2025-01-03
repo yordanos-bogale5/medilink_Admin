@@ -1,0 +1,35 @@
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+  }
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+/* Add custom styling for the search input */
+input[type="text"] {
+  padding: 20px;
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+
+  /* Input fields and buttons will span full width on smaller screens */
+  input[type="text"], button {
+    width: 100%;
+  }
+}

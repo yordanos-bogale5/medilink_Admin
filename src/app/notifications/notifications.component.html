@@ -1,0 +1,31 @@
+<div class="container">
+  <!-- If there are notifications -->
+  <div *ngIf="notifications.length > 0" class="alert alert-info">
+    <div class="list-group">
+      <div *ngFor="let notification of notifications; let i = index" class="list-group-item fadeInUp">
+
+        <!-- Icon and message -->
+        <div class="d-flex align-items-center flex-grow-1">
+          <!-- Icon based on type -->
+          <i *ngIf="notification.type === 'success'" class="bi bi-check-circle-fill text-success"></i>
+          <i *ngIf="notification.type === 'danger'" class="bi bi-x-circle-fill text-danger"></i>
+          <i *ngIf="notification.type === 'info'" class="bi bi-info-circle-fill text-info"></i>
+          <i *ngIf="notification.type === 'comment'" class="bi bi-chat-dots-fill text-primary"></i>
+          <i *ngIf="notification.type === 'like'" class="bi bi-heart-fill text-danger"></i>
+          
+          <!-- Message and Timestamp -->
+          <span class="ms-2 flex-grow-1">{{ notification.message }}</span>
+          <small class="text-muted">{{ notification.timestamp | date:'short' }}</small>
+        </div>
+
+        <!-- Dismiss Button -->
+        <button (click)="dismissNotification(i)" class="btn btn-outline-danger btn-sm">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- If there are no notifications -->
+  <div *ngIf="notifications.length === 0" class="alert alert-warning text-center">
+    No new notifications.
+  </div>
+</div>
